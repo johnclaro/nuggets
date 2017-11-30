@@ -7,7 +7,7 @@ For noobies
 * [x] GET /containers/<id>/logs	              Dump specific container logs
 * [ ] GET /services		            	          List all service
 * [ ] GET /nodes		            	            List all nodes in the swarm
-* [ ] GET /images		            	            List all images
+* [x] GET /images		            	            List all images
 * [ ] POST /containers		            	      Create a new container
 * [ ] POST /images		            	          Create a new image
 * [ ] PATCH /images/<id>		            	    Change a specific image's attributes
