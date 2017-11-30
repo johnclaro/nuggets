@@ -66,7 +66,7 @@ def containers_show(id):
     Inspect specific container
     """
 
-    resp = ''
+    resp = docker('inspect', id)
 
     return Response(response=resp, mimetype="application/json")
 
