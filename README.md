@@ -9,10 +9,13 @@ For noobies
 * [ ] GET /nodes		            	            List all nodes in the swarm
 * [x] GET /images		            	            List all images
 * [x] POST /containers		            	      Create a new container
-* [ ] POST /images		            	          Create a new image
+* [x] POST /images		            	          Create a new image
 * [ ] PATCH /images/<id>		            	    Change a specific image's attributes
 * [ ] PATCH /containers/<id>              	  Change a container's state
 * [ ] DELETE /containers                  	  Delete all containers (including running)
 * [ ] DELETE /containers/<id> 	              Delete a specific container
 * [ ] DELETE /images                      	  Delete all images
 * [ ] DELETE /images/<id>		                  Delete a specific image
+
+# Notes
+- Dockerfile names must be lowercased that is why there is a .lower() in def images_create()
