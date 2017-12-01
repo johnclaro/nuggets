@@ -85,6 +85,7 @@ def containers_log(id):
 def images_remove(id):
     """
     Delete a specific image
+    curl -s -X DELETE -H 'Content-Type: application/json' http://localhost:8080/images/7f2619ed1768
     """
     docker('rmi', id)
     resp = '{"id": "%s"}' % id
@@ -119,10 +120,13 @@ def containers_remove_all():
 def images_remove_all():
     """
     Force remove all images - dangrous!
+    curl -s -X DELETE -H 'Content-Type: application/json' http://localhost:8080/images
     """
-
-    resp = ''
-    return Response(response=resp, mimetype="application/json")
+    output = docker('images')
+    images = docker_images_to_array(output)
+    for image in images:
+        docker('rmi', image['id'])
+    return Response(response='Removed all images', mimetype="application/json")
 
 
 @app.route('/containers', methods=['POST'])

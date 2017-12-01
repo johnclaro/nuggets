@@ -14,8 +14,8 @@ For noobies
 * [x] PATCH /containers/<id>              	  Change a container's state
 * [x] DELETE /containers                  	  Delete all containers (including running)
 * [x] DELETE /containers/<id> 	              Delete a specific container
-* [ ] DELETE /images                      	  Delete all images
-* [ ] DELETE /images/<id>		                  Delete a specific image
+* [x] DELETE /images                      	  Delete all images
+* [x] DELETE /images/<id>		                  Delete a specific image
 
 # Notes
 - Dockerfile names must be lowercased that is why there is a .lower() in def images_create()
