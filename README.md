@@ -8,7 +8,7 @@ For noobies
 * [ ] GET /services		            	          List all service
 * [ ] GET /nodes		            	            List all nodes in the swarm
 * [x] GET /images		            	            List all images
-* [ ] POST /containers		            	      Create a new container
+* [x] POST /containers		            	      Create a new container
 * [ ] POST /images		            	          Create a new image
 * [ ] PATCH /images/<id>		            	    Change a specific image's attributes
 * [ ] PATCH /containers/<id>              	  Change a container's state
