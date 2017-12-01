@@ -95,8 +95,9 @@ def images_remove(id):
 def containers_remove(id):
     """
     Delete a specific container - must be already stopped/killed
+    curl -s -X DELETE -H 'Content-Type: application/json' http://localhost:8080/containers/b6cd8ea512c8
     """
-    resp = ''
+    resp = docker('rm', id)
     return Response(response=resp, mimetype="application/json")
 
 

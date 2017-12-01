@@ -13,7 +13,7 @@ For noobies
 * [x] PATCH /images/<id>		            	    Change a specific image's attributes
 * [x] PATCH /containers/<id>              	  Change a container's state
 * [ ] DELETE /containers                  	  Delete all containers (including running)
-* [ ] DELETE /containers/<id> 	              Delete a specific container
+* [x] DELETE /containers/<id> 	              Delete a specific container
 * [ ] DELETE /images                      	  Delete all images
 * [ ] DELETE /images/<id>		                  Delete a specific image
 
