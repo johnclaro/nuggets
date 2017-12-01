@@ -10,7 +10,7 @@ For noobies
 * [x] GET /images		            	            List all images
 * [x] POST /containers		            	      Create a new container
 * [x] POST /images		            	          Create a new image
-* [ ] PATCH /images/<id>		            	    Change a specific image's attributes
+* [x] PATCH /images/<id>		            	    Change a specific image's attributes
 * [ ] PATCH /containers/<id>              	  Change a container's state
 * [ ] DELETE /containers                  	  Delete all containers (including running)
 * [ ] DELETE /containers/<id> 	              Delete a specific container
