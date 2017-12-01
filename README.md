@@ -1,6 +1,16 @@
 # nuggets
 For noobies
 
+# Usage
+Run the server first via
+```bash
+python server.py
+```
+
+While the server is running, copy and paste one of CURL commands to another
+terminal
+
+# Checklist
 * [x] GET /containers                     	  List all containers
 * [x] GET /containers?state=running       	  List running containers (only)
 * [x] GET /containers/<id>	                  Inspect a specific container
