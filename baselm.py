@@ -106,8 +106,13 @@ def containers_remove_all():
     """
     Force remove all containers - dangrous!
     """
-    resp = ''
-    return Response(response=resp, mimetype="application/json")
+    output = docker('ps', '-a')
+    containers = docker_ps_to_array(output)
+    for container in containers:
+        docker('stop', container['id'])
+    for container in containers:
+        docker('rm', container['id'])
+    return Response(response='Removed all containers', mimetype="application/json")
 
 
 @app.route('/images', methods=['DELETE'])
