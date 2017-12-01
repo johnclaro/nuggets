@@ -54,6 +54,7 @@ def images_index():
     List all images
 
     Complete the code below generating a valid response.
+    curl -s -X GET -H 'Accept: application/json' http://localhost:8080/images | python -mjson.tool
     """
 
     output = docker('images')
@@ -65,6 +66,7 @@ def images_index():
 def containers_show(id):
     """
     Inspect specific container
+    curl -s -X GET -H 'Accept: application/json' http://localhost:8080/containers/b6cd8ea512c8 | python -mjson.tool
     """
 
     resp = docker('inspect', id)
@@ -76,6 +78,7 @@ def containers_show(id):
 def containers_log(id):
     """
     Dump specific container logs
+    curl -s -X GET -H 'Accept: application/json' http://localhost:8080/containers/b6cd8ea512c8/logs | python -mjson.tool
     """
     resp = docker('logs', id)
     return Response(response=resp, mimetype="application/json")
@@ -106,6 +109,7 @@ def containers_remove(id):
 def containers_remove_all():
     """
     Force remove all containers - dangrous!
+    curl -s -X DELETE -H 'Content-Type: application/json' http://localhost:8080/containers
     """
     output = docker('ps', '-a')
     containers = docker_ps_to_array(output)
@@ -149,6 +153,7 @@ def images_create():
     """
     Create image (from uploaded Dockerfile)
     curl -H 'Accept: application/json' -F file=@Dockerfile http://localhost:8080/images
+    curl -H 'Accept: application/json' -F file=@dockerfiles/whale-say.Dockerfile http://localhost:8080/images
     """
     dockerfile = request.files['file']
     dirpath = mkdtemp()
