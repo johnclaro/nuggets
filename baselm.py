@@ -125,7 +125,7 @@ def images_remove_all():
     output = docker('images')
     images = docker_images_to_array(output)
     for image in images:
-        docker('rmi', image['id'])
+        docker('rmi', image['id'], '-f')
     return Response(response='Removed all images', mimetype="application/json")
 
 
