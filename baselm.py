@@ -137,7 +137,7 @@ def containers_create():
 @app.route('/images', methods=['POST'])
 def images_create():
     """
-    Create image (from uploaded Dockerfile2)
+    Create image (from uploaded Dockerfile)
     curl -H 'Accept: application/json' -F file=@Dockerfile http://localhost:8080/images
     """
     dockerfile = request.files['file']
