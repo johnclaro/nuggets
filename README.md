@@ -15,8 +15,8 @@ terminal
 * [x] GET /containers?state=running       	  List running containers (only)
 * [x] GET /containers/<id>	                  Inspect a specific container
 * [x] GET /containers/<id>/logs	              Dump specific container logs
-* [ ] GET /services		            	          List all service
-* [ ] GET /nodes		            	            List all nodes in the swarm
+* [x] GET /services		            	          List all service
+* [x] GET /nodes		            	            List all nodes in the swarm
 * [x] GET /images		            	            List all images
 * [x] POST /containers		            	      Create a new container
 * [x] POST /images		            	          Create a new image

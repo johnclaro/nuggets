@@ -198,6 +198,20 @@ def images_update(id):
     return Response(response=resp, mimetype="application/json")
 
 
+@app.route('/services', methods=['GET'])
+def services_index():
+    output = docker('service', 'ls')
+    resp = json.dumps(docker_services_to_array(output))
+    return Response(response=resp, mimetype="application/json")
+
+
+@app.route('/nodes', methods=['GET'])
+def nodes_index():
+    output = docker('node', 'ls')
+    resp = json.dumps(docker_nodes_to_array(output))
+    return Response(response=resp, mimetype="application/json")
+
+
 def docker(*args):
     cmd = ['docker']
     for sub in args:
@@ -251,6 +265,32 @@ def docker_images_to_array(output):
         each['id'] = c[2]
         each['tag'] = c[1]
         each['name'] = c[0]
+        all.append(each)
+    return all
+
+
+def docker_services_to_array(output):
+    all = []
+    for c in [line.split() for line in output.splitlines()[1:]]:
+        each = {}
+        each['id'] = c[0]
+        each['name'] = c[1]
+        each['mode'] = c[2]
+        each['replicas'] = c[3]
+        each['image'] = c[4]
+        all.append(each)
+    return all
+
+
+def docker_nodes_to_array(output):
+    all = []
+    for c in [line.split() for line in output.splitlines()[1:]]:
+        each = {}
+        each['id'] = c[0]
+        each['hostname'] = c[1]
+        each['status'] = c[2]
+        each['availability'] = c[3]
+        each['manager_status'] = c[4]
         all.append(each)
     return all
 
